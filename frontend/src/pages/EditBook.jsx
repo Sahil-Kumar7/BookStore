@@ -17,7 +17,7 @@ const EditBook = () => {
 
   useEffect(()=> {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-management-system-umbb.onrender.com/books/${id}`)
     .then((res)=>{
       setAuthor(res.data.author);
       setpublishYear(res.data.publishYear);
@@ -39,7 +39,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`https://book-management-system-umbb.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });;
